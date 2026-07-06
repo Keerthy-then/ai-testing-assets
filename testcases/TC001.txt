@@ -1,1 +1,11 @@
-Verify that authenticated users can access account information successfully.
+Feature: Account API
+
+Scenario: Retrieve account information
+
+Given the user is authenticated
+
+When the user requests account information
+
+Then the account information should be returned
+
+And status code should be 200
