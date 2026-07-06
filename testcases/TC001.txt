@@ -1,11 +1,11 @@
-Feature: Account API
+Feature: User Login API
 
-Scenario: Retrieve account information
-
-Given the user is authenticated
-
-When the user requests account information
-
-Then the account information should be returned
-
-And status code should be 200
+  Scenario: Successful login with valid credentials
+    Given the Login API endpoint is available
+    And the user has valid credentials
+      | username | testuser |
+      | password | Test@123 |
+    When the user sends a POST request to the Login API
+    Then the response status code should be 200
+    And the response should contain an authentication token
+    And the response message should be "Login successful"
