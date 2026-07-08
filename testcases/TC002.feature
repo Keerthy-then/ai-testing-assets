@@ -16,3 +16,6 @@ Then the response status code should be 200
 
 And the response should contain an authentication token
 
+And the response message should be "Login successful"
+
+
